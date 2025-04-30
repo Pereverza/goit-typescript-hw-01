@@ -1,4 +1,8 @@
-function merge<T extends object, U extends object>(objA: T, objB: U) {
+function merge<T extends object, U extends object>(objA: T, objB: U): T & U {
   return Object.assign({}, objA, objB);
 }
 const mergedObj = merge({ name: "Max", hoobies: ["Sports"] }, { age: 30 });
+
+console.log(mergedObj.name);
+console.log(mergedObj.hoobies);
+console.log(mergedObj.age);
